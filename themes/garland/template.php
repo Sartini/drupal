@@ -53,7 +53,7 @@ function garland_process_html(&$vars) {
 /**
  * Override or insert variables into the page template.
  */
-function garland_preprocess_page(&$vars) {
+function garland_preprocess_page(&$vars, $hook) {
   // Move secondary tabs into a separate variable.
   $vars['tabs2'] = array(
     '#theme' => 'menu_local_tasks',
@@ -112,6 +112,33 @@ function garland_preprocess_page(&$vars) {
   $slogan_text = $vars['site_slogan'];
   $site_name_text = $vars['site_name'];
   $vars['site_name_and_slogan'] = $site_name_text . ' ' . $slogan_text;
+
+
+  
+   if (isset($vars['node'])) {
+
+         // Page template suggestions based off URL alias
+        $alias=drupal_get_path_alias($_GET['q']);
+        $args=explode('/', $alias);
+        $type = _node_extract_type($vars['node']);
+
+        if(isset($args) && $args[0] != '') {
+          if ($type == 'page') {
+            $vars['theme_hook_suggestions'][] = 'page__'. $args[0];
+          } else {
+            
+            $vars['theme_hook_suggestions'][] = 'page__'. $type ;
+          }
+          
+        } else {
+          $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;
+         
+        }
+ 
+        
+    }
+ 
+    var_dump( $vars['theme_hook_suggestions']);
 }
 
 /**

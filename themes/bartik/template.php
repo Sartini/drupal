@@ -36,6 +36,32 @@ function bartik_process_html(&$variables) {
   }
 }
 
+
+
+function bartik_preprocess_page(&$vars, $hook) {
+
+
+   if (isset($vars['node'])) {
+
+         // Page template suggestions based off URL alias
+        $alias=drupal_get_path_alias($_GET['q']);
+        $args=explode('/', $alias);
+
+        if(isset($args) && $args[0] != '') {
+          $vars['theme_hook_suggestions'][] = 'page__'. $args[0];
+        } else {
+          $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;
+         
+        }
+
+        
+    }
+
+
+
+}
+
+
 /**
  * Override or insert variables into the page template.
  */

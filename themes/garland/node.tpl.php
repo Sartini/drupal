@@ -1,7 +1,7 @@
 <?php
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-
+NODE RAIZ......
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>

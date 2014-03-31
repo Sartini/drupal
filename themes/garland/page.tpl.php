@@ -1,6 +1,7 @@
 <?php
 ?>
   <?php print render($page['header']); ?>
+DA RAIZ
 
   <div id="wrapper">
     <div id="container" class="clearfix">
@@ -25,7 +26,7 @@
         <?php endif; ?>
         <?php endif; ?>
         </div>
-
+ 
         <?php if ($primary_nav): print $primary_nav; endif; ?>
         <?php if ($secondary_nav): print $secondary_nav; endif; ?>
       </div> <!-- /#header -->
@@ -52,11 +53,18 @@
           <?php print render($page['help']); ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <div class="clearfix">
+
+             
+
+
             <?php print render($page['content']); ?>
           </div>
           <?php print $feed_icons ?>
           <?php print render($page['footer']); ?>
       </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
+
+
+
 
       <?php if ($page['sidebar_second']): ?>
         <div id="sidebar-second" class="sidebar">
