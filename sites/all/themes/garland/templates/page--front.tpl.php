@@ -36,7 +36,7 @@ FRONT PAGE
           <?php print render($page['sidebar_first']); ?>
         </div>
       <?php endif; ?>
-
+ 
       <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
           <?php print $breadcrumb; ?>
           <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
@@ -53,12 +53,13 @@ FRONT PAGE
           <?php print render($page['help']); ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <div class="clearfix">
-
+ 
              
 
 
-            <?php print render($page['content']); ?>
+            <?php print render($page['content']); ?> 
           </div>
+
           <?php print $feed_icons ?>
           <?php print render($page['footer']); ?>
       </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->

@@ -1,7 +1,7 @@
 <?php
 ?>
   <?php print render($page['header']); ?>
-  ALL/THEMES/GARLAND/TEMPLATES/PAGE--NODE--10 imoveis
+  ALL/THEMES/GARLAND/TEMPLATES/PAGE--NODE--10 IMOVEIS - TEMPLATE
 
 
 
@@ -46,6 +46,7 @@
           <a id="main-content"></a>
           <?php if ($tabs): ?><div id="tabs-wrapper" class="clearfix"><?php endif; ?>
           <?php print render($title_prefix); ?>
+
           <?php if ($title): ?>
             <h1<?php print $tabs ? ' class="with-tabs"' : '' ?>><?php print $title ?></h1>
           <?php endif; ?>
@@ -55,13 +56,41 @@
           <?php print $messages; ?>
           <?php print render($page['help']); ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-          <div class="clearfix">
-            <?php print render($page['content']); ?>
+         
+ 
+ 
+          <div class="clearfix">   
+            <?php  print render($page['content']); ?> 
+
+
+          <?php 
+
+          		 	//arg(1)	codigo do node  , exemplo  /node/17   arg(1) = 17
+			        $node = node_load(arg(1));
+			        // Got $node! What to do now????
+			      
+			        foreach ($node->field_foto as $image) {
+			         	 //var_dump($image[0]['filename']);
+
+			         	 foreach ($image as $item) {
+			         	 	  echo $item['filename']. '<br>';
+			         	 }
+			          	 
+			        }
+      
+           ?>
           </div>
+
+
+
+
+
+
+
           <?php print $feed_icons ?>
           <?php print render($page['footer']); ?>
       </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
-
+ 
       <?php if ($page['sidebar_second']): ?>
         <div id="sidebar-second" class="sidebar">
           <?php print render($page['sidebar_second']); ?>

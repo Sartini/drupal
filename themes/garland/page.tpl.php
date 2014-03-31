@@ -36,7 +36,7 @@ DA RAIZ
           <?php print render($page['sidebar_first']); ?>
         </div>
       <?php endif; ?>
-
+ 
       <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
           <?php print $breadcrumb; ?>
           <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
@@ -55,7 +55,7 @@ DA RAIZ
           <div class="clearfix">
 
              
-
+ 
 
             <?php print render($page['content']); ?>
           </div>
